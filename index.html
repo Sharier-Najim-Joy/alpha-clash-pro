@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha</title>
+    <!-- tailwind and daisy ui-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="font-poppins">
+    <main class="min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center">
+        <section id="home-page" class="home flex justify-center items-center min-h-screen">
+            <div class="text-center space-y-8">
+                <h1 class="font-anton text-9xl text-white">ALPHABET CLASH</h1>
+            <p class="text-xl text-white ">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+            <button onclick="play()" class="btn text-2xl text-black bg-white rounded-xl">Play Now</button>
+            </div>
+        </section>
+        <!-- play ground section -->
+        <section id="play-page" class="play-ground hidden">
+            <div class="flex flex-col items-center justify-center pt-10 gap-7">
+                <!-- screen -->
+            <div class="artboard artboard-horizontal phone-6 border-[20px] border-[#010313cc] rounded-2xl bg-[#FFFFFFB3] text-center">
+                <div class="flex justify-center">
+                    <p class="bg-[#010313cc] text-white rounded-b-lg px-6 pb-4">Don't watch keyboard  while playing...</p>
+                </div>
+                <div class="flex justify-center items-center h-3/4"><p id="current-alphabet" class="text-black text-9xl font-bold uppercase">Y</p></div>
+            </div>
+            <!-- key board start-->
+            <div>
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
+                  </div> 
+                  <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
+                  </div> 
+                  <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
+                  </div>
+            </div>
+            <!-- key board end-->
+            <!-- heart score -->
+            <div class="flex justify-between w-3/4">
+                <button class="btn bg-purple-700 border-none rounded-full text-white">
+                    <p>Life</p>
+                    <img src="images/heart.png" alt="">
+                    <span id="current-life">5</span>
+                  </button>
+                  <button class="btn bg-purple-700 border-none rounded-full text-white">
+                    <p>score</p>
+                    <img src="images/doller.png" alt="">
+                    <span id="current-score">0</span>
+                  </button>
+            </div>
+            </div>
+        </section>
+        <!-- score section  -->
+        <section id="score" class="min-h-screen flex flex-col justify-center items-center hidden">
+            <div class="bg-[#FFFFFF33] p-5 rounded-xl text-center space-y-4">
+                <h1 class="text-white text-4xl">
+                    <span class="font-bold">Your Score : </span>
+                    <span id="final-score">0</span>
+                </h1>
+                <button onclick="play()" class="text-2xl text-black bg-white p-4 rounded-xl font-bold">Play Again
+                </button>
+                <p class="text-white">Practice will make you Pro</p>
+            </div>
+        </section>
+    </main>
+    <script src="scripts/utility.js"></script>
+    <script src="scripts/alpah-clash.js"></script>
+</body>
+
+</html>
